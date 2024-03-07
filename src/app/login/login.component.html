@@ -1,0 +1,39 @@
+<div class="flex justify-center items-center h-screen bg-gradient-to-br from-blue-200 to-purple-200">
+  <div class="w-2/6 mx-auto bg-white rounded-lg shadow-lg p-8">
+    <h1 class="text-3xl font-bold mb-8 text-center">Login / Register</h1>
+
+
+    <form [formGroup]="loginForm">
+      <!-- email input field -->
+      <div class="my-2">
+        <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Email</label>
+        <input formControlName="email" type="text" id="email"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+          placeholder="name" />
+        <div *ngIf="
+            loginForm.controls['email'].touched &&
+            loginForm.controls['email'].errors
+          " id="email_error" class="text-red-500">
+          Please enter a valid email
+        </div>
+      </div>
+      <!-- password -->
+      <div class="my-2">
+        <label for="password" class="block mb-2 text-sm font-medium text-gray-900">Password</label>
+        <input formControlName="password" type="password" id="password"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+          placeholder="password" />
+      </div>
+      <!-- login button -->
+      <div class="flex">
+        <button class="my-2 py-2 bg-blue-500 text-white w-1/2 mx-2" (click)="onRegister()">
+          Register
+        </button>
+
+        <button class="my-2 py-2 bg-blue-300 text-white w-1/2 mx-2" (click)="onLogin()">
+          Login
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

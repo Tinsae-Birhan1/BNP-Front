@@ -1,0 +1,46 @@
+<div class="flex justify-center items-center h-screen bg-gradient-to-br from-blue-200 to-purple-200">
+  <div class="w-3/4 mx-auto text-center bg-white rounded-lg shadow-lg p-8">
+    <h2 class="text-3xl font-bold mb-8">Token Information</h2>
+    <ng-container>
+      <!-- info -->
+      <div class="flex justify-center">
+        <div class="bg-gray-200 w-1/3 p-4 border border-gray-400 rounded-l-lg">
+          <span class="text-lg font-semibold text-gray-800">Name</span>
+        </div>
+        <div class="bg-gray-300 w-2/3 p-4 border border-gray-400 rounded-r-lg">
+          <span class="text-lg text-gray-800">{{ info.name | titlecase }}</span>
+        </div>
+      </div>
+      <!-- circulating supply -->
+      <div class="flex justify-center mt-4">
+        <div class="bg-gray-200 w-1/3 p-4 border border-gray-400 rounded-l-lg">
+          <span class="text-lg font-semibold text-gray-800">Circulating Supply</span>
+        </div>
+        <div class="bg-gray-300 w-2/3 p-4 border border-gray-400 rounded-r-lg">
+          <span class="text-lg text-gray-800">{{ info.circulatingSupply | number }}</span>
+        </div>
+      </div>
+      <!-- total supply -->
+      <div class="flex justify-center mt-4">
+        <div class="bg-gray-200 w-1/3 p-4 border border-gray-400 rounded-l-lg">
+          <span class="text-lg font-semibold text-gray-800">Total Supply</span>
+        </div>
+        <div class="bg-gray-300 w-2/3 p-4 border border-gray-400 rounded-r-lg">
+          <span class="text-lg text-gray-800">{{ info.totalSupply | number }}</span>
+        </div>
+      </div>
+    </ng-container>
+
+    <!-- validation for logged in users only -->
+    <div class="flex justify-center mt-8">
+      <div class="w-1/2">
+        <a *ngIf="isLoggedIn" class="m-2" href="/update">
+          <button
+            class="py-3 px-6 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition duration-300 shadow-md">
+            Update
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
